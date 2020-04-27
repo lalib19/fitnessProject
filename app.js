@@ -34,6 +34,19 @@ app.use(
     resave: true,
   })
 );
+
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
+
+
+
 // Routing
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
