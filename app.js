@@ -6,6 +6,11 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const hbs = require("hbs");
+const session = require("express-session");
+const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
 
 const app = express();
 
@@ -16,7 +21,9 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); // where are the t
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
