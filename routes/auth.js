@@ -2,10 +2,9 @@ const express = require("express");
 const router = new express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const session = require("express-session")
 
 router.get("/signin", (req, res) => {
-  res.render("signin",{msg: req.flash("msg")});
+  res.render("signin",{msg:req.session.msg});
 });
 
 /** AUTH MADE WITH ASYNC AWAIT */
@@ -22,9 +21,8 @@ router.post("/signin", async (req, res, next) => {
       return res.redirect("/signin");
     }
     if (!bcrypt.compareSync(password, foundUser.password)) {
-      // req.flash("error", "Invalid credentials");
       req.session.msg = { status: 401, text: "Invalid credentials" };
-      return res.render("/signin");
+      return res.redirect("/signin");
     }
     req.session.currentUser = foundUser;
     res.redirect("/");
@@ -34,7 +32,7 @@ router.post("/signin", async (req, res, next) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup",{msg: req.flash("msg")});
+  res.render("signup",{msg:req.session.msg});
 });
 
 
@@ -45,8 +43,7 @@ router.post("/signup", async (req, res, next) => {
   try {
     const foundUser = await User.findOne({ email: email });
     if (foundUser) {
-      req.flash("error", "Email already taken");
-    //   req.session.msg = { status: 401, text: "Email already taken." };
+      req.session.msg = { status: 401, text: "Email already taken." };
       return res.redirect("/signup");
     }
     const salt = 10;
