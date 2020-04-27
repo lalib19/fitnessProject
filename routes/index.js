@@ -9,4 +9,4 @@ router.get(["/", "/home"], (req, res, next) => {
 
 
 
-module.exports = router; 
+module.exports = router;
