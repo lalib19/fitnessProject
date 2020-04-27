@@ -14,7 +14,7 @@ const exerciseSchema = new Schema({
 	},
 	category: {
 		type: String,
-		enum: [ 'men', 'women' ]
+		enum: [ 'Men', 'Women' ]
 	},
 	exerciseUrl: String
 });
