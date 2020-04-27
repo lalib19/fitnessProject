@@ -26,12 +26,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-// Routing
-app.use("/", require("./routes/index"));
-app.use("/users", require("./routes/users"));
-app.use("/", require("./routes/auth"));
-
+app.use(flash());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -39,13 +34,19 @@ app.use(
     resave: true,
   })
 );
+// Routing
+app.use("/", require("./routes/index"));
+app.use("/users", require("./routes/users"));
+app.use("/", require("./routes/auth"));
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-app.use(flash());
+
 
 // error handler
 app.use(function (err, req, res, next) {
