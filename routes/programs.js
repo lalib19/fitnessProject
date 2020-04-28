@@ -15,4 +15,22 @@ router.get("/programs", (req, res, next) => {
         });
 });
 
+router.get("/programs/:id", (req, res, next) => {
+    Program.findById(req.params.id)
+        .then(program => {
+            const exercises = [];
+            program.exercisesList.forEach(exerciseId => {
+                Exercise.findById(exerciseId).then(exercise => {
+                    exercises.push(exercise)
+                }).catch(err => console.log(err))
+            });
+            res.render("programExercises", {
+                exercises: exercises
+            });
+        })
+        .catch(dbErr => {
+            console.log(dbErr);
+        });
+});
+
 module.exports = router;
