@@ -1,7 +1,20 @@
 <h1 class="title">Exercises</h1>
 <hr>
 
-<ul class="exoList">
+<form id="filter-form">
+    <ul>
+        <li class="tag-list-item">
+            <input name="filter" value="Beginner" type="checkbox" class="checkbox" />
+            <label for="Beginner">Beginner</label>
+        </li>
+        <li class="tag-list-item">
+            <input name="filter" value="Intermediate" type="checkbox" class="checkbox" />
+            <label for="Intermediate">Intermediate</label>
+        </li>
+    </ul>
+</form>
+
+<ul class="exoList" id="exoList">
     {{#each exercises}}
     <li class="exercise">
         <p>{{this.name}}</p>

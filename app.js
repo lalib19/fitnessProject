@@ -53,6 +53,7 @@ app.use("/users", require("./routes/users"));
 app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/exercises"));
 app.use("/", require("./routes/programs"));
+app.use("/", require("./routes/exercises.api"));
 
 
 
