@@ -6,7 +6,7 @@ const exerciseSchema = new Schema({
 	description: String,
 	level: {
 		type: String,
-		enum: [ 'Begginer', 'Intermediate', 'Advanced' ]
+		enum: [ 'Beginner', 'Intermediate', 'Advanced' ]
 	},
 	bodyPart: {
 		type: String,
