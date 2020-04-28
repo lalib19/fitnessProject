@@ -1,10 +1,10 @@
 const express = require("express");
 const router = new express.Router();
-const program = require("../models/Program")
-
+const Program = require("../models/Program")
+const Exercise = require("../models/Exercise")
 
 router.get("/programs", (req, res, next) => {
-    program.find()
+    Program.find()
         .then(dbResult => {
             res.render("programs", {
                 programs: dbResult
