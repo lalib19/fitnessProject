@@ -16,7 +16,9 @@ const exerciseSchema = new Schema({
 		type: String,
 		enum: [ 'Men', 'Women' ]
 	},
-	exerciseUrl: String
+	exerciseUrl: String,
+	numberOfSets: Number,
+	numberOfReps: Number
 });
 
 const exercise = mongoose.model('exercise', exerciseSchema);
