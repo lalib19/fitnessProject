@@ -178,7 +178,6 @@ mongoose
 					console.log(exercise.name);
 				});
 				Exercise.find({
-					bodyPart: "Lower body",
 					level: "Beginner"
 				}).then(dbRes => {
 					console.log(dbRes)
@@ -188,14 +187,13 @@ mongoose
 					})
 					if (dbRes != []) {
 						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
+							name: dbRes[0].level + " Program",
+							description: dbRes[0].level + " Program",
 							exercisesList: ids
 						})
 					}
 				}).catch(dbErr => console.log(dbErr))
 				Exercise.find({
-					bodyPart: "Lower body",
 					level: "Intermediate"
 				}).then(dbRes => {
 					console.log(dbRes)
@@ -205,14 +203,13 @@ mongoose
 					})
 					if (dbRes != []) {
 						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
+							name: dbRes[0].level + " Program",
+							description: dbRes[0].level + " Program",
 							exercisesList: ids
 						})
 					}
 				}).catch(dbErr => console.log(dbErr))
 				Exercise.find({
-					bodyPart: "Lower body",
 					level: "Advanced"
 				}).then(dbRes => {
 					console.log(dbRes)
@@ -222,114 +219,13 @@ mongoose
 					})
 					if (dbRes != []) {
 						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
+							name: dbRes[0].level + " Program",
+							description: dbRes[0].level + " Program",
 							exercisesList: ids
 						})
 					}
 				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Upper body",
-					level: "Beginner"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Upper body",
-					level: "Intermediate"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Upper body",
-					level: "Advanced"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Full body",
-					level: "Beginner"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Full body",
-					level: "Intermediate"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
-				Exercise.find({
-					bodyPart: "Full body",
-					level: "Advanced"
-				}).then(dbRes => {
-					console.log(dbRes)
-					ids = []
-					dbRes.forEach((dbRe) => {
-						ids.push(dbRe._id)
-					})
-					if (dbRes != []) {
-						Program.create({
-							name: dbRes[0].level + " " + dbRes[0].bodyPart,
-							description: dbRes[0].level + " " + dbRes[0].bodyPart,
-							exercisesList: ids
-						})
-					}
-				}).catch(dbErr => console.log(dbErr))
+
 			})
 			.catch((err) => {
 				console.log(err);
