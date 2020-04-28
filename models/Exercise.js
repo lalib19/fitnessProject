@@ -12,10 +12,6 @@ const exerciseSchema = new Schema({
 		type: String,
 		enum: [ 'Upper body', 'Lower body', 'Full body' ]
 	},
-	category: {
-		type: String,
-		enum: [ 'Men', 'Women' ]
-	},
 	exerciseUrl: String,
 	numberOfSets: Number,
 	numberOfReps: Number
