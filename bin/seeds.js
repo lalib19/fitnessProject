@@ -35,7 +35,7 @@ const exercises = [
 		name: 'Hand Help Squats',
 		description:
 			'Stand up straight with a tight core and flat back. Place your arms in front of your kness. Your feet should be shoulder-width and toes and pointing forward. Slowly descend by bending your knees and driving your hips back. Keep your chest and head up. Once your upper thighs are parallel with the ground, pause, then drive your hips forward to return to the starting position.',
-		level: 'Begginer',
+		level: 'Beginner',
 		bodyPart: 'Full body',
 		exerciseUrl: 'https://youtu.be/98c-YrA0ROY'
 	},
@@ -62,7 +62,7 @@ const exercises = [
 		name: 'Hand Help Lunges',
 		description:
 			'Stand with your feet shoulder width apart, keep your shoulders back and your back straight. Take a long stride forward with your right leg. Your right foot should be in a position, that when you bend your right knee, your upper and lower leg form a 90-degree angle. Slowly bend both your knees, to lower your hips until your left knee is just above the floor. Hold for a count of one. Return to the start position by slowly straightening your legs and raising your body back to a standing position. Complete all the repetitions for one set full set, then switch legs, or you can alternate between legs for each rep.',
-		level: 'Begginer',
+		level: 'Beginner',
 		bodyPart: 'Lower body',
 		exerciseUrl: 'https://youtu.be/gkAYeOEe33U'
 	},
@@ -89,7 +89,7 @@ const exercises = [
 		name: 'Plank Hold',
 		description:
 			'Get into a face down position on the floor supporting your upper body on your forearms. Your elbows should be bent at 90 degrees. Extend your legs straight out behind you, supporting them on your toes and balls of your feet. Keep your body in a straight line by tightening your abdominal and oblique muscles. Hold for as long as possible.',
-		level: 'Begginer',
+		level: 'Beginner',
 		bodyPart: 'Upper body',
 		exerciseUrl: 'https://youtu.be/I_uMNn8WBWk'
 	},
@@ -116,7 +116,7 @@ const exercises = [
 		name: 'Hip Raises',
 		description:
 			'Lie on an exercise mat with your knees bent so that your feet are flat on the floor. Keep your back straight. Place your hands out to your sides palms flat for stability. Raise your glutes off the floor by extending your hips upward while pushing down through you heels.Continue until your back, hips and thighs are in a straight line. Hold for a count of one. single leg hip raisesReturn to the start position by lowering your hips back to the floor. Pause then repeat.',
-		level: 'Begginer',
+		level: 'Beginner',
 		bodyPart: 'Lower body',
 		exerciseUrl: 'https://youtu.be/qyw_m7g4oVg'
 	},
@@ -143,7 +143,7 @@ const exercises = [
 		name: 'Supermans Holds',
 		description:
 			'Lie face down on a mat, with your arms fully extended above your head and your legs fully extended behind you. Lift your chest, arms and legs off the floor by arching your back. Only the tops of your quads and your lower abdomen should be in contact with the floor. Hold for a count of 2 while squeezing your abdominals and obliques. Return to the starting position for a count of one, then repeat.',
-		level: 'Begginer',
+		level: 'Beginner',
 		bodyPart: 'Upper body',
 		exerciseUrl: 'https://youtu.be/F6TxCdnEUP0'
 	},
