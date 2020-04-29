@@ -2,7 +2,7 @@
 {{!-- <hr> --}}
 <div class="exercise-container">
     <div class="filter-form">
-        <form>
+        <form id="filter-form">
             <ul>
                 <li class="tag-list-item">
                     <input name="filterLevel" value="Beginner" type="checkbox" class="checkbox" />
@@ -30,26 +30,25 @@
                 </li>
             </ul>
         </form>
-        <form method="post" action="/exercises" id="form-create-program">
-        <h2 id="filter-form-title">MY FITNESS PROGRAM</h2>
-        <div>
-          {{!-- <label for="programName">Your program name</label> --}}
-          <input id="programName" type="text" name="programName"
-            required placeholder="Your program's name">
-        </div>
-        <div>
-          {{!-- <label for="programDescription">Description</label> --}}
-          <input id="programDescription" type="text" required name="programDescription" placeholder="Description">
-        </div>
-        <button id="create-program-btn">Create your program with the selected exercises</button>
+        <form class="tag-list-item" method="post" action="/exercises" id="form-create-program">
+            <h2 id="filter-form-title">MY HOME F<span id="navbar-span">i</span>T PROGRAM</h2>
+            <div>
+                {{!-- <label for="programName">Your program name</label> --}}
+                <input id="programName" type="text" name="programName" required placeholder="Give it a name">
+            </div>
+            <div>
+                {{!-- <label for="programDescription">Description</label> --}}
+                <input id="programDescription" type="text" required name="programDescription" placeholder="Description">
+            </div>
+            <button id="create-program-btn">CLICK HERE TO SAVE SELECTED EXERCISES</button>
         </form>
     </div>
-    
+
     <ul class="exoList" id="exoList">
         {{#each exercises}}
         <li class="exercise">
             <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
-      <label for="favourite">favourite</label></p>
+                <label for="favourite">favourite</label></p>
             <p>{{this.description}}</p>
             <p>{{this.level}}</p>
             <p>{{this.bodyPart}}</p>

@@ -15,9 +15,7 @@ router.get("/exercises", (req, res, next) => {
 });
 
 router.post("/exercises", (req, res, next) => {
-    res.render("createProgram", {
-        exercisesList: req.body
-    })
+    console.log(req.body)
 });
 
 

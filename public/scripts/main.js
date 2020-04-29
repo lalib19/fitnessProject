@@ -1,5 +1,5 @@
 const filterForm = document.getElementById("filter-form");
-const btnCreateProgram = document.getElementById("create-program");
+const btnCreateProgram = document.getElementById("create-program-btn");
 // const Program = require("../../models/Program")
 // axios
 //   .get("/test")
@@ -15,6 +15,8 @@ btnCreateProgram.onclick = getProgramExercises;
 
 function getProgramExercises(e) {
     const exercisesIds = []
+    const programName = document.querySelector("[name='programName']");
+    const programDescription = document.querySelector("[name='programDescription']")
     const favourites = document.querySelectorAll("[name='favourite']");
     favourites.forEach((input) => {
         if (input.checked) {

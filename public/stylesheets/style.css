@@ -172,18 +172,9 @@ h3 {
 	list-style: none;
 }
 
-#create-program-btn {
-	font-size: 1rem;
-	background-color: black;
-	color: white;
-	border: 1px solid white;
-	width: 10rem;
-	padding: 0.5rem;
-}
-
 .filter-form {
 	/* height: 80%; */
-	width: 15rem;
+	/* width: 15rem; */
 	position: fixed;
 	z-index: 1;
 	overflow-x: hidden;
@@ -194,6 +185,38 @@ h3 {
 #filter-form-title {
 	color: white;
 	background-color: black;
+	font-size: 1.2rem;
 	width: auto;
 	height: auto;
+	text-align: center;
+}
+
+#navbar-span {
+	margin-right: 0.05rem;
+}
+
+#programName,
+#programDescription {
+	width: 90%;
+	padding: 10px 15px;
+	margin: 8px 0 8px 12px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#create-program-btn {
+	font-size: 1rem;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	/* width: 10rem; */
+	padding: 0.5rem;
+}
+
+.exercise {
+	border: 1px solid black;
+	width: 35%;
+	height: auto;
+	text-align: center;
 }
