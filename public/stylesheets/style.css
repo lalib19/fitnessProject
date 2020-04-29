@@ -38,7 +38,17 @@ nav a {
 	font-size: 1.2em;
 }
 
-.main {
+#navbar-signin,
+#navbar-logout {
+	border: 1px solid white;
+	width: auto;
+	height: auto;
+	padding: 0.5rem;
+}
+
+/* HOMEPAGE */
+
+.homepage-container {
 	background: url("../Images/home-workout.jpg")no-repeat center center fixed;
 	width: 100vw;
 	height: 90vh;
@@ -65,18 +75,7 @@ h3 {
 	margin-left: 0.15rem;
 }
 
-.big-container {
-	display: flex;
-	width: 100%;
-}
-
-.container {
-	width: 90%;
-}
-
-.flexed-item {
-	display: flex;
-}
+/* SIGN IN + SIGN UP PAGES*/
 
 .form-container {
 	background: url("../Images/signin_img.jpg")no-repeat center center;
@@ -95,19 +94,24 @@ h3 {
 	padding-left: 0.5rem;
 }
 
-.form-title {
+.signin-title {
 	font-size: 4rem;
-	margin-left: 2rem;
+	text-align: center;
+}
+
+.signup-title {
+	font-size: 4rem;
+	text-align: center;
 }
 
 .form-subtitle {
-	font-size: 1.97rem;
-	margin-bottom: 1rem;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
 }
 
-.form-item-wrapper {
-	margin-bottom: 0.5rem;
-	font-size: 1.25rem;
+#signup-span {
+	margin-left: 0.025rem;
 }
 
 .button-primary {
@@ -125,7 +129,7 @@ h3 {
 	border: 1px solid black;
 }
 
-button {
+#signin-btn {
 	font-size: 1rem;
 	background-color: white;
 	color: black;
@@ -135,7 +139,25 @@ button {
 	margin-left: 6.5rem;
 }
 
+#create-account-btn {
+	font-size: 1rem;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	width: 10rem;
+	padding: 0.5rem;
+	margin-left: 4.75rem;
+}
+
 .form-sub-infos {
-	margin-left: 0.5rem;
 	font-weight: 800;
+	text-align: center;
+}
+
+/* EXERCISES PAGE */
+
+.exercises-container {
+	background: url("../Images/exercise-img.jpg")no-repeat center center;
+	width: 100vw;
+	height: 90vh;
 }

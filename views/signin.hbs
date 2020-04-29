@@ -1,7 +1,7 @@
-<div class="sign form-container">
+<div class="form-container">
   <section class="form-box">
     <header class="form-header">
-      <h1 class="form-title">SIGN IN</h1>
+      <h1 class="signin-title">SIGN IN</h1>
       
     </header>
     {{#if msg}}
@@ -18,7 +18,7 @@
         <input id="password" type="password" class="input-text input" placeholder="Password *" required name="password"
           >
       </div>
-      <button class="button-primary white">Log in!</button>
+      <button id="signin-btn" class="button-primary white">Log in!</button>
     </form>
     <p class="form-sub-infos">Don't have an account yet? <a href="/signup" class="button-link-form">Sign Up</a></p>
   </section>

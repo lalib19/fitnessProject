@@ -1,5 +1,4 @@
-<h1 class="title">Exercises</h1>
-<hr>
+{{!-- <div class="exercises-container"> --}}
 
 <form id="filter-form">
     <ul>
@@ -28,12 +27,15 @@
             <label for="Full body">Full body</label>
         </li>
     </ul>
-</form>
+</div>
+
+
+<button id="create-program">Create your program with the selected exercises</button>
 
 <ul class="exoList" id="exoList">
     {{#each exercises}}
     <li class="exercise">
-        <p>{{this.name}} <input name="favourite" value="favourite" type="checkbox" class="checkbox" />
+        <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
   <label for="favourite">favourite</label></p>
         <p>{{this.description}}</p>
         <p>{{this.level}}</p>
