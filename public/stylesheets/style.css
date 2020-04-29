@@ -171,11 +171,6 @@ h3 {
 	padding: 0.5rem;
 }
 
-/* #filter-form {
-	margin-left: 2rem;
-	list-style: none;
-} */
-
 #create-program-btn {
 	font-size: 1rem;
 	background-color: black;
@@ -183,4 +178,12 @@ h3 {
 	border: 1px solid white;
 	width: 10rem;
 	padding: 0.5rem;
+}
+
+.filter-form {
+	/* height: 80%; */
+	position: fixed;
+	z-index: 1;
+	overflow-x: hidden;
+	padding-top: 5rem;
 }
