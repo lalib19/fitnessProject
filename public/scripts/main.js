@@ -1,6 +1,6 @@
 const filterForm = document.getElementById("filter-form");
 const btnCreateProgram = document.getElementById("create-program");
-
+// const Program = require("../../models/Program")
 // axios
 //   .get("/test")
 //   .then((dbRes) => {
@@ -11,11 +11,11 @@ const btnCreateProgram = document.getElementById("create-program");
 //   });
 
 filterForm.onchange = handleChange;
-btnCreateProgram.onclick = createProgram;
+btnCreateProgram.onclick = getProgramExercises;
 
-function createProgram(e) {
+function getProgramExercises(e) {
     const exercisesIds = []
-    const favourites = filterForm.querySelectorAll("[name='favourite']");
+    const favourites = document.querySelectorAll("[name='favourite']");
     favourites.forEach((input) => {
         if (input.checked) {
             exercisesIds.push(input.value);
@@ -23,6 +23,7 @@ function createProgram(e) {
         }
     });
     console.log(exercisesIds)
+    return exercisesIds
 }
 
 function handleChange(e) {
