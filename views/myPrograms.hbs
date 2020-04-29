@@ -1,16 +1,25 @@
 <h1 class="title">Exercises</h1>
 <hr>
 
-<ul class="exoList">
-    {{#each favorites}}
-    <li class="favorites">
-        <p>{{this.name}}</p>
-        <p>{{this.description}}</p>
-        <p>{{this.level}}</p>
-        <p>{{this.bodyPart}}</p>
-        <iframe width="420" height="315" src={{this.exerciseUrl}}>
-        </iframe>
-        {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+
+<ul class="programList">
+    {{#each programs}}
+    <li>
+        <ul class="exoList">
+            {{#each favProg}}
+            <li class="favorites">
+                <p>{{this.name}}</p>
+                <p>{{this.description}}</p>
+                <p>{{this.level}}</p>
+                <p>{{this.bodyPart}}</p>
+                <iframe width="420" height="315" src={{this.exerciseUrl}}>
+                </iframe>
+                {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+
+                <a href="/delete/{{this._id}}">Delete</a>
+            </li>
+            {{/each}}
+        </ul>
     </li>
     {{/each}}
 </ul>
