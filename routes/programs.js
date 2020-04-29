@@ -34,10 +34,28 @@ router.get("/programs/:id", (req, res, next) => {
 });
 
 router.get("/myPrograms", (req, res, next) => {
-    Exercise.find()
+    Program.find({
+            creator: req.session.currentUser._id
+        })
+        // .populate("exercisesList")
         .then(dbResult => {
+            const allExercices = [];
+            dbResult.forEach((program) => {
+                const query = program.exercicesList;
+                query.map(x => [x])
+                Exercise.find({
+                    $or: query
+
+                }).then(dbRes => {
+                    allExercices.push(dbRes)
+
+                }).catch(dbErr => {
+                    console.log(dbErr);
+                })
+            })
             res.render("myPrograms", {
-                favorites: dbResult
+                programs: dbResult,
+                allExercices: allExercices
             });
             console.log(dbResult);
         })
