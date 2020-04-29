@@ -199,7 +199,7 @@ h3 {
 #programDescription {
 	width: 90%;
 	padding: 10px 15px;
-	margin: 8px 0 8px 12px;
+	margin: 8px 0 8px 7px;
 	box-sizing: border-box;
 	border: 1px solid black;
 	text-align: center;
@@ -228,4 +228,25 @@ h3 {
 	text-align: center;
 	margin-right: 75px;
 	margin-top: 20px;
+}
+
+.exercise-upper-info {
+	border: 1px solid black;
+	width: auto;
+	height: 20%;
+	text-align: center;
+	padding: 0.5rem;
+	margin: 0.5rem 2rem;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left: 20px;
+	height: 15px;
+	display: inline-block;
+	line-height: 15px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 15px;
+	vertical-align: middle;
+	cursor: pointer;
 }
