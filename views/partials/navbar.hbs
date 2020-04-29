@@ -1,13 +1,14 @@
 <nav class="nav-bar">
     <div>
         <ul class="nav-list-1">
-        <li><a class="nav-link" href="/">HOME</a> | </li>
-        <li><a class="nav-link" href="/exercises">EXERCISES</a> | </li>
-        <li><a class="nav-link" href="/programs">WORKOUTS</a> | </li>
+            <li><a class="nav-link" href="/">HOME</a> | </li>
+            <li><a class="nav-link" href="/exercises">EXERCISES</a> | </li>
+            <li><a class="nav-link" href="/programs">WORKOUTS</a> | </li>
+            <li><a class="nav-link" href="/myPrograms">MY WORKOUTS</a> | </li>
         </ul>
 
     </div>
-    
+
     <div class="nav-list-2">
         {{#if isLoggedIn}}
         <li id="navbar-logout"><a class="nav-link" href="/logout">LOGOUT</a></li>
@@ -15,5 +16,5 @@
         <li id="navbar-signin"><a class="nav-link" href="/signin">SIGN IN</a></li>
         {{/if}}
     </div>
-    
+
 </nav>
