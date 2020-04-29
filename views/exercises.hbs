@@ -30,17 +30,17 @@
                 </li>
             </ul>
         </form>
-        <form method="post" action="/exercises" id="form-create-program">
-            <h2>MY FITNESS PROGRAM</h2>
+        <form class="tag-list-item" method="post" action="/exercises" id="form-create-program">
+            <h2 id="filter-form-title">MY HOME F<span id="navbar-span">i</span>T PROGRAM</h2>
             <div>
                 {{!-- <label for="programName">Your program name</label> --}}
-                <input id="programName" type="text" name="programName" required placeholder="Your program's name">
+                <input id="programName" type="text" name="programName" required placeholder="Give it a name">
             </div>
             <div>
                 {{!-- <label for="programDescription">Description</label> --}}
                 <input id="programDescription" type="text" required name="programDescription" placeholder="Description">
             </div>
-            <button id="create-program-btn">Create your program with the selected exercises</button>
+            <button id="create-program-btn">CLICK HERE TO SAVE SELECTED EXERCISES</button>
         </form>
     </div>
 

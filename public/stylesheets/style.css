@@ -158,8 +158,10 @@ h3 {
 
 .exercise-container {
 	background-image: url("../Images/exercise-img.jpg");
-	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	width: 100vw;
+	display: flex;
 }
 
 .tag-list-item {
@@ -169,6 +171,38 @@ h3 {
 	border: 1px solid white;
 	width: 10rem;
 	padding: 0.5rem;
+	list-style: none;
+}
+
+.filter-form {
+	position: fixed;
+	z-index: 1;
+	width: 250px;
+	padding-top: 5rem;
+	padding-left: 1rem;
+}
+
+#filter-form-title {
+	color: white;
+	background-color: black;
+	font-size: 1.2rem;
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+
+#navbar-span {
+	margin-right: 0.05rem;
+}
+
+#programName,
+#programDescription {
+	width: 90%;
+	padding: 10px 15px;
+	margin: 8px 0 8px 12px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	text-align: center;
 }
 
 #create-program-btn {
@@ -176,14 +210,22 @@ h3 {
 	background-color: black;
 	color: white;
 	border: 1px solid white;
-	width: 10rem;
 	padding: 0.5rem;
 }
 
-.filter-form {
-	/* height: 80%; */
-	position: fixed;
-	z-index: 1;
-	overflow-x: hidden;
-	padding-top: 5rem;
+.exoList {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	list-style: none;
+	margin-left: 250px;
+}
+
+.exercise {
+	border: 1px solid black;
+	width: 35%;
+	height: auto;
+	text-align: center;
+	margin-right: 75px;
+	margin-top: 20px;
 }
