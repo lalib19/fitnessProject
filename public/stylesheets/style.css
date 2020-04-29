@@ -158,8 +158,10 @@ h3 {
 
 .exercise-container {
 	background-image: url("../Images/exercise-img.jpg");
-	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	width: 100vw;
+	display: flex;
 }
 
 .tag-list-item {
@@ -173,11 +175,9 @@ h3 {
 }
 
 .filter-form {
-	/* height: 80%; */
-	/* width: 15rem; */
 	position: fixed;
 	z-index: 1;
-	overflow-x: hidden;
+	width: 250px;
 	padding-top: 5rem;
 	padding-left: 1rem;
 }
@@ -210,8 +210,15 @@ h3 {
 	background-color: black;
 	color: white;
 	border: 1px solid white;
-	/* width: 10rem; */
 	padding: 0.5rem;
+}
+
+.exoList {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	list-style: none;
+	margin-left: 250px;
 }
 
 .exercise {
@@ -219,4 +226,6 @@ h3 {
 	width: 35%;
 	height: auto;
 	text-align: center;
+	margin-right: 75px;
+	margin-top: 20px;
 }
