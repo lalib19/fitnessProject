@@ -1,12 +1,11 @@
 const filterForm = document.getElementById("filter-form");
 const btnCreateProgram = document.getElementById("create-program-btn");
 const exercisesIds = [];
-const Program = require("../../models/Program");
 
 filterForm.onchange = handleChange;
 
 setEventListenerFavourite()
-btnCreateProgram.onclick = createProgram;
+// btnCreateProgram.onclick = createProgram;
 
 function setEventListenerFavourite(e) {
 
@@ -18,6 +17,10 @@ function setEventListenerFavourite(e) {
                 exercisesIds.push(input.value);
                 console.log(input.value + " pushed)")
                 console.log(exercisesIds)
+                console.log(exercisesIds)
+                console.log(document.querySelector("[name='exercisesList']"))
+                document.querySelector("[name='exercisesList']").value = exercisesIds
+                console.log(document.querySelector("[name='exercisesList']").value)
             }
             // exercisesIds.push(input.value);
             // console.log(input.value + " pushed)")
@@ -25,6 +28,9 @@ function setEventListenerFavourite(e) {
 
     });
     console.log(exercisesIds)
+    console.log(document.querySelector("[name='exercisesList']"))
+    document.querySelector("[name='exercisesList']").textContent = exercisesIds
+    console.log(document.querySelector("[name='exercisesList']").textContent)
     return exercisesIds
 }
 
