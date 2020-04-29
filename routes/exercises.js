@@ -14,6 +14,11 @@ router.get("/exercises", (req, res, next) => {
         });
 });
 
+router.post("/exercises", (req, res, next) => {
+    res.render("createProgram", {
+        exercisesList: req.body
+    })
+});
 
 
 module.exports = router;
