@@ -1,32 +1,45 @@
 const filterForm = document.getElementById("filter-form");
 const btnCreateProgram = document.getElementById("create-program-btn");
-// const Program = require("../../models/Program")
-// axios
-//   .get("/test")
-//   .then((dbRes) => {
-//     console.log(dbRes);
-//   })
-//   .catch((err) => {
-//     console.log("ici");
-//   });
+const exercisesIds = [];
+const Program = require("../../models/Program");
 
 filterForm.onchange = handleChange;
-btnCreateProgram.onclick = getProgramExercises;
 
-function getProgramExercises(e) {
-    const exercisesIds = []
-    const programName = document.querySelector("[name='programName']");
-    const programDescription = document.querySelector("[name='programDescription']")
+setEventListenerFavourite()
+btnCreateProgram.onclick = createProgram;
+
+function setEventListenerFavourite(e) {
+
     const favourites = document.querySelectorAll("[name='favourite']");
+    console.log(favourites)
     favourites.forEach((input) => {
-        if (input.checked) {
-            exercisesIds.push(input.value);
-            console.log(input.value + " pushed)")
-        }
+        input.addEventListener("change", e => {
+            if (input.checked) {
+                exercisesIds.push(input.value);
+                console.log(input.value + " pushed)")
+                console.log(exercisesIds)
+            }
+            // exercisesIds.push(input.value);
+            // console.log(input.value + " pushed)")
+        })
+
     });
     console.log(exercisesIds)
     return exercisesIds
 }
+
+// function createProgram(e) {
+//     const programName = document.querySelector("[name='programName']");
+//     const programDescription = document.querySelector("[name='programDescription']")
+//     Program.create({
+//         name: programName,
+//         description: programDescription,
+//         exercisesList: exercisesIds,
+//         // creator: String,
+//     }).then(dbRes =>{console.log(dbRes)})
+//     .catch(dbErr =>{console.log(dbErr)})
+
+// }
 
 function handleChange(e) {
     // const filters = [];
@@ -56,15 +69,17 @@ function handleChange(e) {
             console.log(res.data)
             console.log("i want to display here")
             displayExercises(res.data);
+            setEventListenerFavourite()
         })
         .catch((err) => {
             console.log(err);
         });
+
 }
 
 function exerciseCard(exercise) {
     let card = `<li class="exercise">
-  <p>${exercise.name} <input name="favourite" value="favourite" type="checkbox" class="checkbox" />
+  <p>${exercise.name} <input name="favourite" value=${exercise._id} type="checkbox" class="checkbox" />
   <label for="favourite">favourite</label></p>
   <p>${exercise.description}</p>
   <p>${exercise.level}</p>
