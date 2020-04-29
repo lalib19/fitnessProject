@@ -1,4 +1,5 @@
 const filterForm = document.getElementById("filter-form");
+const btnCreateProgram = document.getElementById("create-program");
 
 // axios
 //   .get("/test")
@@ -10,6 +11,19 @@ const filterForm = document.getElementById("filter-form");
 //   });
 
 filterForm.onchange = handleChange;
+btnCreateProgram.onclick = createProgram;
+
+function createProgram(e) {
+    const exercisesIds = []
+    const favourites = filterForm.querySelectorAll("[name='favourite']");
+    favourites.forEach((input) => {
+        if (input.checked) {
+            exercisesIds.push(input.value);
+            console.log(input.value + " pushed)")
+        }
+    });
+    console.log(exercisesIds)
+}
 
 function handleChange(e) {
     // const filters = [];
@@ -34,7 +48,7 @@ function handleChange(e) {
     });
     console.log(levels, bodyParts)
 
-    getExercises(levels,bodyParts)
+    getExercises(levels, bodyParts)
         .then((res) => {
             console.log(res.data)
             console.log("i want to display here")
@@ -68,15 +82,15 @@ function displayExercises(exercises) {
     });
 }
 
-function getExercises(levels,bodyParts) {
+function getExercises(levels, bodyParts) {
     console.log("i am levels", levels)
     console.log("i am bodyParts", bodyParts)
     console.log("inside getExercise)")
     return axios.get("/api" + window.location.pathname, {
         params: { // axios.get(url, options)
             level: levels,
-            bodyPart :bodyParts
-             // This params option object 
+            bodyPart: bodyParts
+            // This params option object 
         }, // will be sent as a query parameter // query string.
     });
 }
