@@ -156,8 +156,31 @@ h3 {
 
 /* EXERCISES PAGE */
 
-.exercises-container {
+.exercise-container {
 	background-image: url("../Images/exercise-img.jpg");
 	background-repeat: repeat;
 	width: 100vw;
+}
+
+.tag-list-item {
+	font-size: 1rem;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	width: 10rem;
+	padding: 0.5rem;
+}
+
+/* #filter-form {
+	margin-left: 2rem;
+	list-style: none;
+} */
+
+#create-program-btn {
+	font-size: 1rem;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	width: 10rem;
+	padding: 0.5rem;
 }

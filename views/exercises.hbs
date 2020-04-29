@@ -1,36 +1,36 @@
 {{!-- <h1 class="title">Exercises</h1> --}}
 {{!-- <hr> --}}
-<div class="exercises-container">
+<div class="exercise-container">
     <form id="filter-form">
         <ul>
             <li class="tag-list-item">
                 <input name="filterLevel" value="Beginner" type="checkbox" class="checkbox" />
-                <label for="Beginner">Beginner</label>
+                <label for="Beginner">BEGINNER</label>
             </li>
             <li class="tag-list-item">
                 <input name="filterLevel" value="Intermediate" type="checkbox" class="checkbox" />
-                <label for="Intermediate">Intermediate</label>
+                <label for="Intermediate">INTERMEDIATE</label>
             </li>
             <li class="tag-list-item">
                 <input name="filterLevel" value="Advanced" type="checkbox" class="checkbox" />
-                <label for="Advanced">Advanced</label>
+                <label for="Advanced">ADVANCED</label>
             </li>
             <li class="tag-list-item">
                 <input name="filterBodyPart" value="Upper body" type="checkbox" class="checkbox" />
-                <label for="Upper body">Upper body</label>
+                <label for="Upper body">UPPER BODY</label>
             </li>
             <li class="tag-list-item">
                 <input name="filterBodyPart" value="Lower body" type="checkbox" class="checkbox" />
-                <label for="Lower body">Lower body</label>
+                <label for="Lower body">LOWER BODY</label>
             </li>
             <li class="tag-list-item">
                 <input name="filterBodyPart" value="Full body" type="checkbox" class="checkbox" />
-                <label for="Full body">Full body</label>
+                <label for="Full body">FULL BODY</label>
             </li>
         </ul>
     </form>
     <form method="post" action="/exercises" id="form-create-program">
-    <button id="create-program">Create your program with the selected exercises</button>
+    <button id="create-program-btn">Create your program with the selected exercises</button>
     </form>
     <ul class="exoList" id="exoList">
         {{#each exercises}}
