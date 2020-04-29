@@ -33,4 +33,17 @@ router.get("/programs/:id", (req, res, next) => {
         });
 });
 
+router.get("/myPrograms", (req, res, next) => {
+    Exercise.find()
+        .then(dbResult => {
+            res.render("myPrograms", {
+                favorites: dbResult
+            });
+            console.log(dbResult);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+ 
 module.exports = router;
