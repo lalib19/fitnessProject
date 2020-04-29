@@ -45,5 +45,49 @@ router.get("/myPrograms", (req, res, next) => {
             console.log(err);
         });
 });
- 
+
+
+router.get("/delete/:id", (req, res, next) => {
+    Program
+        .findByIdAndDelete(req.params.id)
+        .then(dbRes => {
+            req.flash("success", "program has been deleted");
+            res.redirect("/myPrograms");
+        })
+        .catch(next);
+});
+
+router.get("/myPrograms/:id", (req, res) => {
+    Program.findById(req.params.id)
+        .then((dbResult) => {
+            res.render("myPrograms.hbs", {
+                program: dbResult,
+                error: req.flash("error"),
+            });
+        })
+        .catch((dbErr) => {
+            console.log(dbErr);
+        });
+});
+
+router.post("/myPrograms/:id", (req, res) => {
+    // console.log(req.params.id);
+    // console.log(req.body);
+    if (req.body.name === "" || req.body.description === "" || req.body.exercisesList === "") {
+        req.flash("error", "Fill in everything please");
+        res.redirect(`/myPrograms/${req.params.id}`);
+    } else {
+        Program.findByIdAndUpdate(req.params.id, req.body, {
+                new: true
+            })
+            .then((dbResult) => {
+                res.redirect("/foods/manage");
+            })
+            .catch((dbErr) => {
+                console.log(dbErr);
+            });
+    }
+});
+
+
 module.exports = router;
