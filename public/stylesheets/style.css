@@ -169,6 +169,7 @@ h3 {
 	border: 1px solid white;
 	width: 10rem;
 	padding: 0.5rem;
+	list-style: none;
 }
 
 #create-program-btn {
@@ -182,8 +183,17 @@ h3 {
 
 .filter-form {
 	/* height: 80%; */
+	width: 15rem;
 	position: fixed;
 	z-index: 1;
 	overflow-x: hidden;
 	padding-top: 5rem;
+	padding-left: 1rem;
+}
+
+#filter-form-title {
+	color: white;
+	background-color: black;
+	width: auto;
+	height: auto;
 }
