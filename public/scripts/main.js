@@ -12,23 +12,29 @@ const filterForm = document.getElementById("filter-form");
 filterForm.onchange = handleChange;
 
 function handleChange(e) {
-    const filters = [];
-    // const Level=[]
-    // const Bodypart=[]
-    const inputs = filterForm.querySelectorAll("[name='filter']");
-    // const inputsLevel = filterForm.querySelectorAll("[name='filterLevel']");
-    // const inputsBodyPart = filterForm.querySelectorAll("[name='filterBodyPart']");
+    // const filters = [];
+    const levels = []
+    const bodyParts = []
+    // const inputs = filterForm.querySelectorAll("[name='filter']");
+    const inputsLevel = filterForm.querySelectorAll("[name='filterLevel']");
+    const inputsBodyPart = filterForm.querySelectorAll("[name='filterBodyPart']");
     console.log("input handled")
     // inputsLevel.forEach et inputsBodyPart.forEach
-    inputs.forEach((input) => {
+    inputsLevel.forEach((input) => {
         if (input.checked) {
-            filters.push(input.value);
+            levels.push(input.value);
             console.log(input.value + " pushed)")
         }
     });
-    console.log(filters)
+    inputsBodyPart.forEach((input) => {
+        if (input.checked) {
+            bodyParts.push(input.value);
+            console.log(input.value + " pushed)")
+        }
+    });
+    console.log(levels, bodyParts)
 
-    getExercises(filters)
+    getExercises(levels,bodyParts)
         .then((res) => {
             console.log(res.data)
             console.log("i want to display here")
@@ -41,10 +47,13 @@ function handleChange(e) {
 
 function exerciseCard(exercise) {
     let card = `<li class="exercise">
-  <p>${exercise.name}</p>
+  <p>${exercise.name} <input name="favourite" value="favourite" type="checkbox" class="checkbox" />
+  <label for="favourite">favourite</label></p>
   <p>${exercise.description}</p>
   <p>${exercise.level}</p>
   <p>${exercise.bodyPart}</p>
+  <iframe width="420" height="315" src=${exercise.exerciseUrl}>
+        </iframe>
 </li>`;
     console.log("exercise card function yo")
     return card + `</a>`;
@@ -59,12 +68,15 @@ function displayExercises(exercises) {
     });
 }
 
-function getExercises(filters) {
-    console.log("i am filters", filters)
+function getExercises(levels,bodyParts) {
+    console.log("i am levels", levels)
+    console.log("i am bodyParts", bodyParts)
     console.log("inside getExercise)")
     return axios.get("/api" + window.location.pathname, {
         params: { // axios.get(url, options)
-            level: filters // This params option object 
+            level: levels,
+            bodyPart :bodyParts
+             // This params option object 
         }, // will be sent as a query parameter // query string.
     });
 }

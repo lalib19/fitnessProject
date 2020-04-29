@@ -1,31 +1,46 @@
-<div class="exercises-container">
-    <h1 class="title">Exercises</h1>
-    <hr>
-    
-    <form id="filter-form">
-        <ul>
-            <li class="tag-list-item">
-                <input name="filter" value="Beginner" type="checkbox" class="checkbox" />
-                <label for="Beginner">Beginner</label>
-            </li>
-            <li class="tag-list-item">
-                <input name="filter" value="Intermediate" type="checkbox" class="checkbox" />
-                <label for="Intermediate">Intermediate</label>
-            </li>
-        </ul>
-    </form>
-    
-    <ul class="exoList" id="exoList">
-        {{#each exercises}}
-        <li class="exercise">
-            <p>{{this.name}}</p>
-            <p>{{this.description}}</p>
-            <p>{{this.level}}</p>
-            <p>{{this.bodyPart}}</p>
-            {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+{{!-- <div class="exercises-container"> --}}
+
+<form id="filter-form">
+    <ul>
+        <li class="tag-list-item">
+            <input name="filterLevel" value="Beginner" type="checkbox" class="checkbox" />
+            <label for="Beginner">Beginner</label>
         </li>
-        {{/each}}
+        <li class="tag-list-item">
+            <input name="filterLevel" value="Intermediate" type="checkbox" class="checkbox" />
+            <label for="Intermediate">Intermediate</label>
+        </li>
+        <li class="tag-list-item">
+            <input name="filterLevel" value="Advanced" type="checkbox" class="checkbox" />
+            <label for="Advanced">Advanced</label>
+        </li>
+        <li class="tag-list-item">
+            <input name="filterBodyPart" value="Upper body" type="checkbox" class="checkbox" />
+            <label for="Upper body">Upper body</label>
+        </li>
+        <li class="tag-list-item">
+            <input name="filterBodyPart" value="Lower body" type="checkbox" class="checkbox" />
+            <label for="Lower body">Lower body</label>
+        </li>
+        <li class="tag-list-item">
+            <input name="filterBodyPart" value="Full body" type="checkbox" class="checkbox" />
+            <label for="Full body">Full body</label>
+        </li>
     </ul>
 </div>
 
 
+<ul class="exoList" id="exoList">
+    {{#each exercises}}
+    <li class="exercise">
+        <p>{{this.name}} <input name="favourite" value="favourite" type="checkbox" class="checkbox" />
+  <label for="favourite">favourite</label></p>
+        <p>{{this.description}}</p>
+        <p>{{this.level}}</p>
+        <p>{{this.bodyPart}}</p>
+        <iframe width="420" height="315" src={{this.exerciseUrl}}>
+        </iframe>
+        {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+    </li>
+    {{/each}}
+</ul>
