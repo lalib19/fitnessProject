@@ -1,31 +1,33 @@
-<section class="sign form-container">
-    <header class="form-header">
-        <h1 class="form-title">SIGN UP</h1>
-        <p class="form-subtitle">Welcome to Homefit </p>
-    </header>
-    {{#if msg}}
-    <p class="message {{msg.status}}">{{msg.text}}</p>
-    {{/if}}
-    <form method="post" action="/signup" method="post" id="form_user">
-        <div class="form-item-wrapper flexed-item">
-       
-            <input id="firstname" type="text" class="input-text input" placeholder="First Name *" name="name" required>
-        </div>
-        <div class="form-item-wrapper flexed-item">
-           
-            <input id="lastname" type="text" class="input-text input" placeholder="Last Name *" required
-                name="lastName">
-        </div>
-        <div class="form-item-wrapper flexed-item">
-          
-            <input id="email" type="email" class="input-text input" placeholder="Email *" name="email"
-                required>
-        </div>
-        <div class="form-item-wrapper flexed-item">
-    
-            <input id="password" type="password" class="input-text input" placeholder="Password *" name="Password" required>
-        </div>
-        <button class="button-primary white">Create Account</button>
-    </form>
-    <p class="form-sub-infos">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
-</section>
+<div class="form-container">
+    <section class="form-box">
+        <header class="form-header">
+            <h1 class="signup-title">SIGN UP</h1>
+            <p class="form-subtitle">WELCOME TO HOME Fi<span id="signup-span">T</span></p>
+        </header>
+        {{#if msg}}
+        <p class="message {{msg.status}}">{{msg.text}}</p>
+        {{/if}}
+        <form method="post" action="/signup" method="post" id="form_user">
+            <div class="form-item-wrapper flexed-item">
+            
+                <input id="firstname" type="text" class="input-text input" placeholder="First Name *" name="name" required>
+            </div>
+            <div class="form-item-wrapper flexed-item">
+            
+                <input id="lastname" type="text" class="input-text input" placeholder="Last Name *" required
+                    name="lastName">
+            </div>
+            <div class="form-item-wrapper flexed-item">
+            
+                <input id="email" type="email" class="input-text input" placeholder="Email *" name="email"
+                    required>
+            </div>
+            <div class="form-item-wrapper flexed-item">
+            
+                <input id="password" type="password" class="input-text input" placeholder="Password *" name="Password" required>
+            </div>
+            <button id="create-account-btn" class="button-primary white">Create Account</button>
+        </form>
+        <p class="form-sub-infos">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
+    </section>
+</div>
