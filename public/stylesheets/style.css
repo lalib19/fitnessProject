@@ -157,7 +157,7 @@ h3 {
 /* EXERCISES PAGE */
 
 .exercises-container {
-	background: url("../Images/exercise-img.jpg")no-repeat center center;
+	background-image: url("../Images/exercise-img.jpg");
+	background-repeat: repeat;
 	width: 100vw;
-	height: 90vh;
 }
