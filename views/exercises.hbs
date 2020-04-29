@@ -30,6 +30,16 @@
         </ul>
     </form>
     <form method="post" action="/exercises" id="form-create-program">
+    <h2>Create your program</h2>
+    <div>
+      <label for="programName">Your program name</label>
+      <input id="programName" type="text" name="programName"
+        required>
+    </div>
+    <div>
+      <label for="programDescription">Description</label>
+      <input id="programDescription" type="text"  required name="programDescription">
+    </div>
     <button id="create-program-btn">Create your program with the selected exercises</button>
     </form>
     <ul class="exoList" id="exoList">
