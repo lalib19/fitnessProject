@@ -235,18 +235,11 @@ h3 {
 	width: auto;
 	height: 20%;
 	text-align: center;
-	padding: 0.5rem;
+	padding: 1rem 0 0 0;
 	margin: 0.5rem 2rem;
 }
 
-input[type=checkbox].css-checkbox + label.css-label {
-	padding-left: 20px;
-	height: 15px;
-	display: inline-block;
-	line-height: 15px;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	font-size: 15px;
-	vertical-align: middle;
-	cursor: pointer;
+iframe {
+	border: 1px solid black;
+	margin-bottom: 0.8rem;
 }
