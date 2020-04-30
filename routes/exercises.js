@@ -23,7 +23,10 @@ router.post("/exercises", (req, res, next) => {
         description: req.body.programDescription,
         exercisesList: exercisesList,
         creator: req.session.currentUser._id
-    }).then(dbRes => console.log(dbRes)).catch(err => console.log(err))
+    }).then(dbRes => {
+        console.log(dbRes)
+        res.redirect("/myPrograms")
+    }).catch(err => console.log(err))
 });
 
 

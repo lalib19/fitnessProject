@@ -39,30 +39,55 @@ router.get("/myPrograms", (req, res, next) => {
         })
         // .populate("exercisesList")
         .then(dbResult => {
-            const allExercices = [];
-            dbResult.forEach((program) => {
-                const query = program.exercicesList;
-                query.map(x => [x])
-                Exercise.find({
-                    $or: query
-
-                }).then(dbRes => {
-                    allExercices.push(dbRes)
-
-                }).catch(dbErr => {
-                    console.log(dbErr);
-                })
-            })
             res.render("myPrograms", {
-                programs: dbResult,
-                allExercices: allExercices
-            });
-            console.log(dbResult);
+                    programs: dbResult
+                });
+            // const allExercices = [];
+            // dbResult.forEach((program) => {
+            //     const query = program.exercicesList;
+            //     query.map(x => [x])
+            //     Exercise.find({
+            //         $or: query
+
+            //     }).then(dbRes => {
+            //         allExercices.push(dbRes)
+
+            //     }).catch(dbErr => {
+            //         console.log(dbErr);
+            //     })
+            // })
+            // res.render("myPrograms", {
+            //     programs: dbResult,
+            //     allExercices: allExercices
+            // });
+            // console.log(dbResult);
         })
         .catch(err => {
             console.log(err);
         });
 });
+
+router.get("/myPrograms/:id",(req, res, next) => {
+    Program.findById(req.params.id)
+    .then(dbResult =>{
+        const query = dbResult.exercicesList;
+        query.map(x => {x})
+        console.log(query)
+        Exercise.find({
+            $or: query
+        }).then(dbRes => {
+            console.log(dbRes)
+            res.render("myProgramExercises",{
+                exercises:dbRes
+            })
+
+        }).catch(dbErr => {
+            console.log(dbErr);
+        })
+    })
+    .catch(err=>console.log(err))
+    
+})
 
 
 router.get("/delete/:id", (req, res, next) => {

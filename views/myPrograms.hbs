@@ -1,11 +1,15 @@
-<h1 class="title">Exercises</h1>
+<h1 class="title">MY PROGRAMS</h1>
 <hr>
 
 
 <ul class="programList">
     {{#each programs}}
     <li>
-        <ul class="exoList">
+        <p>{{this.name}}</p>
+        <p>{{this.description}}</p>
+        <a href="/programs/{{this._id}}">Go to this program</a>
+        {{!-- <img src="" alt=""> --}}
+        {{!-- <ul class="exoList">
             {{#each favProg}}
             <li class="favorites">
                 <p>{{this.name}}</p>
@@ -13,13 +17,13 @@
                 <p>{{this.level}}</p>
                 <p>{{this.bodyPart}}</p>
                 <iframe width="420" height="315" src={{this.exerciseUrl}}>
-                </iframe>
-                {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+                </iframe> --}}
+        {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
 
-                <a href="/delete/{{this._id}}">Delete</a>
+        {{!-- <a href="/delete/{{this._id}}">Delete</a>
             </li>
             {{/each}}
-        </ul>
+        </ul> --}}
     </li>
     {{/each}}
 </ul>
