@@ -3,8 +3,13 @@
         <ul class="nav-list-1">
             <li><a class="nav-link" href="/">HOME</a> | </li>
             <li><a class="nav-link" href="/exercises">EXERCISES</a> | </li>
+            {{#if isLoggedIn}}
             <li><a class="nav-link" href="/programs">WORKOUTS</a> | </li>
             <li><a class="nav-link" href="/myPrograms">MY WORKOUTS</a> | </li>
+            {{else}}
+            <li><a class="nav-link" href="/programs">WORKOUTS</a> | </li>
+            {{/if}}
+            
         </ul>
 
     </div>
