@@ -69,24 +69,21 @@ router.get("/myPrograms", (req, res, next) => {
 
 router.get("/myPrograms/:id",(req, res, next) => {
     Program.findById(req.params.id)
-    .then(dbResult =>{
-        const query = dbResult.exercicesList;
-        query.map(x => {x})
-        console.log(query)
-        Exercise.find({
-            $or: query
-        }).then(dbRes => {
-            console.log(dbRes)
-            res.render("myProgramExercises",{
-                exercises:dbRes
-            })
-
-        }).catch(dbErr => {
-            console.log(dbErr);
+        .then(program => {
+            const exercises = [];
+            program.exercisesList.forEach(exerciseId => {
+                Exercise.findById(exerciseId).then(exercise => {
+                    exercises.push(exercise)
+                }).catch(err => console.log(err))
+            });
+            res.render("myProgramExercises", {
+                exercises: exercises,
+                programName:program.name
+            });
         })
-    })
-    .catch(err=>console.log(err))
-    
+        .catch(dbErr => {
+            console.log(dbErr);
+        });  
 })
 
 
