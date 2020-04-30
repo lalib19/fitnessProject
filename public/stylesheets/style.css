@@ -49,7 +49,8 @@ nav a {
 /* HOMEPAGE */
 
 .homepage-container {
-	background: url("../Images/home-workout.jpg")no-repeat center center fixed;
+	background: url("../Images/home-workout.jpg")no-repeat center center;
+	background-size: cover;
 	width: 100vw;
 	height: 90vh;
 	display: flex;
@@ -79,6 +80,7 @@ h3 {
 
 .form-container {
 	background: url("../Images/signin_img.jpg")no-repeat center center;
+	background-size: cover;
 	width: 100vw;
 	height: 90vh;
 	display: flex;
@@ -288,6 +290,7 @@ img {
 	padding: 1rem 0;
 	margin: 0.5rem;
 }
+
 #try-this-program {
 	border: 1px solid black;
 	background-color: black;
@@ -299,3 +302,90 @@ a {
 	color: black;
 	text-decoration: none;
 }
+
+/* MY PROGRAMS HBS */
+
+.myPrograms-container {
+	background-image: url("../Images/exercise-img.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100vw;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.programList-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	list-style: none;
+}
+
+.myProgramList {
+	border: 1px solid black;
+	color: black;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	padding-bottom: 2rem;
+	margin: 1.5rem 2rem;
+}
+
+#myProgram-name {
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	width: auto;
+	height: 15%;
+	text-align: center;
+	padding: 1rem 0;
+	margin: 0.5rem;
+}
+
+#myProgram-go-to,
+#myProgram-update,
+#myProgeam-delete {
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	padding: 0.75rem 0.5rem;
+}
+
+.myProgramsExercises-container {
+	background-image: url("../Images/exercise-img.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.myUnique-exercise {
+	border: 1px solid black;
+	width: 35%;
+	height: fit-content;
+	text-align: center;
+	margin-right: 75px;
+	margin-top: 20px;
+}
+
+.myUnique-exercise-upper-info {
+	border: 1px solid black;
+	width: auto;
+	height: 15%;
+	text-align: center;
+	padding: 1rem 0;
+	margin: 0.5rem 2rem;
+}
+
+.myUnique-exercise-bottom-info {
+	border: 1px solid black;
+	width: auto;
+	height: auto;
+	text-align: center;
+	padding: 1rem 0 0 0;
+	margin: 0.5rem 2rem;
+}
+
+/* #myUnique-exercise-h1{} */

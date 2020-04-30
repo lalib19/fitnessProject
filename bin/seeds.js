@@ -190,7 +190,7 @@ mongoose
 						});
 						if (dbRes != []) {
 							Program.create({
-								name: dbRes[0].level + ' Program',
+								name: 'BEGINNER PROGRAM',
 								description: dbRes[0].level + ' Program',
 								exercisesList: ids
 							});
@@ -208,7 +208,7 @@ mongoose
 						});
 						if (dbRes != []) {
 							Program.create({
-								name: dbRes[0].level + ' Program',
+								name: 'INTERMEDIATE PROGRAM',
 								description: dbRes[0].level + ' Program',
 								exercisesList: ids
 							});
@@ -226,7 +226,7 @@ mongoose
 						});
 						if (dbRes != []) {
 							Program.create({
-								name: dbRes[0].level + ' Program',
+								name: 'ADVANCED PROGRAM',
 								description: dbRes[0].level + ' Program',
 								exercisesList: ids
 							});

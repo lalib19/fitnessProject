@@ -1,15 +1,16 @@
-<h1 class="title">MY PROGRAMS</h1>
-<hr>
+{{!-- <h1 class="title">MY PROGRAMS</h1>
+<hr> --}}
+<div class="myPrograms-container">
 
-
-<ul class="programList">
+<ul class="programList programList-container">
     {{#each programs}}
-    <li>
-        <p>{{this.name}}</p>
+    <li class="myProgramList">
+        <p id="myProgram-name">{{this.name}}</p>
         <p>{{this.description}}</p>
-        <a href="/myPrograms/{{this._id}}">Go to this program</a>
-        <a href="/program-edit/{{this._id}}">Update</a>
-        <a href="/delete/{{this._id}}">Delete</a>
+        <img src="../Images/programs-img2.jpg" alt="">
+        <a id="myProgram-go-to" href="/myPrograms/{{this._id}}">GO TO THIS PROGRAM</a>
+        <a id="myProgram-update" href="/program-edit/{{this._id}}">UPDATE</a>
+        <a id="myProgeam-delete" href="/delete/{{this._id}}">DELETE</a>
 
         {{!-- <img src="" alt=""> --}}
         {{!-- <ul class="exoList">
@@ -30,3 +31,5 @@
     </li>
     {{/each}}
 </ul>
+
+</div>
