@@ -1,12 +1,12 @@
-<form class="tag-list-item" method="post" action="/program-edit/{{program._id}}" id="form-create-program">
+<form class="tag-list-item" method="post" action="/prog-edit/{{program._id}}" id="form-create-program">
     <h2 id="filter-form-title">MY HOME F<span id="navbar-span">i</span>T PROGRAM</h2>
     <div>
         {{!-- <label for="programName">Your program name</label> --}}
-        <input id="programName" type="text" name="programName" required placeholder="Give it a name">
+        <input id="programName" type="text" name="programName" required placeholder="Give it a name" value={{program.name}}>
     </div>
     <div>
         {{!-- <label for="programDescription">Description</label> --}}
-        <input id="programDescription" type="text" name="programDescription" placeholder="Description">
+        <input id="programDescription" type="text" name="programDescription" placeholder="Description" value={{program.description}}>
     </div>
     {{!-- <input id="exercisesList" type="hidden" visibility="hidden" name="exercisesList"> --}}
     <button id="create-program-btn">UPDATE PROGRAM</button>

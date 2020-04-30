@@ -42,25 +42,6 @@ router.get("/myPrograms", (req, res, next) => {
             res.render("myPrograms", {
                     programs: dbResult
                 });
-            // const allExercices = [];
-            // dbResult.forEach((program) => {
-            //     const query = program.exercicesList;
-            //     query.map(x => [x])
-            //     Exercise.find({
-            //         $or: query
-
-            //     }).then(dbRes => {
-            //         allExercices.push(dbRes)
-
-            //     }).catch(dbErr => {
-            //         console.log(dbErr);
-            //     })
-            // })
-            // res.render("myPrograms", {
-            //     programs: dbResult,
-            //     allExercices: allExercices
-            // });
-            // console.log(dbResult);
         })
         .catch(err => {
             console.log(err);
@@ -128,6 +109,40 @@ router.post("/myPrograms/:id", (req, res) => {
             });
     }
 });
+
+router.get("/program-edit/:id", (req, res, next) => {
+    Program.findById(req.params.id)
+          .then(program => {
+              const exercises = [];
+              program.exercisesList.forEach(exerciseId => {
+                  Exercise.findById(exerciseId).then(exercise => {
+                      exercises.push(exercise)
+                  }).catch(err => console.log(err))
+              });
+              res.render("program_edit.hbs", {
+                  exercises: exercises,
+                  program:program
+              });
+          })
+          .catch(dbErr => {
+              console.log(dbErr);
+          });
+  });
+  
+  router.post("/prog-edit/:id", (req, res, next) => {
+    Program.findByIdAndUpdate(req.params.id, {
+        name: req.body.programName,
+        description: req.body.programDescription
+      }, {
+        new: true
+      })
+      .then((updatedProgram) => {
+        res.redirect("/myPrograms");
+      })
+      .catch(err => {
+        next(err);
+      });
+  });
 
 
 module.exports = router;
