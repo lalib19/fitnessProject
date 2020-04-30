@@ -1,15 +1,21 @@
-<h1 class="title">Programs</h1>
-<hr>
+{{!-- <h1 class="title">Programs</h1>
+<hr> --}}
+<div class="programs-container">   
+    <ul class="exoList exoList-programs">
+        {{#each programs}}
+        <li class="exercise exercise-in-programs-container">
+            <div class="exercise-info-in-programs-container">
+            <p>{{this.name}}</p>
+            
+            {{!-- <p>{{this.description}}</p> --}}
+            {{!-- <p>{{this.creator}}</p> --}}
+            <p>{{this.likes}}</p>
 
-<ul class="exoList">
-    {{#each programs}}
-    <li class="exercise">
-        <p>{{this.name}}</p>
-        <p>{{this.description}}</p>
-        <p>{{this.creator}}</p>
-        <p>{{this.likes}}</p>
-        <a href="/programs/{{this._id}}">Try this program</a>
-        {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
-    </li>
-    {{/each}}
-</ul>
+            </div>
+            <img src="../Images/programs-img1.jpg" alt="">
+            <a id="try-this-program" href="/programs/{{this._id}}">TRY THIS PROGRAM</a>
+            {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

@@ -156,7 +156,7 @@ h3 {
 
 /* EXERCISES PAGE */
 
-.exercise-container {
+.exercises-container {
 	background-image: url("../Images/exercise-img.jpg");
 	background-attachment: fixed;
 	background-size: cover;
@@ -213,7 +213,7 @@ h3 {
 	padding: 0.5rem;
 }
 
-.exoList {
+.exoList-exercises {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: center;
@@ -221,7 +221,7 @@ h3 {
 	margin-left: 250px;
 }
 
-.exercise {
+.unique-exercise {
 	border: 1px solid black;
 	width: 35%;
 	height: auto;
@@ -242,4 +242,60 @@ h3 {
 iframe {
 	border: 1px solid black;
 	margin-bottom: 0.8rem;
+}
+
+/* PROGRAMS.HBS CSS */
+
+.programs-container {
+	background-image: url("../Images/exercise-img.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100vw;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.exoList-programs {
+	display: grid;
+	grid-template-columns: auto auto;
+	list-style: none;
+}
+
+.exercise-in-programs-container {
+	border: 1px solid black;
+	color: black;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	padding-bottom: 2rem;
+	margin: 1.5rem 2rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	padding-bottom: 1rem;
+}
+
+.exercise-info-in-programs-container {
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	width: auto;
+	height: 15%;
+	text-align: center;
+	padding: 1rem 0;
+	margin: 0.5rem;
+}
+#try-this-program {
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	padding: 0.75rem 0.5rem;
+}
+
+a {
+	color: black;
+	text-decoration: none;
 }
