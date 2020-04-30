@@ -4,7 +4,7 @@ const Program = require("../models/Program")
 const Exercise = require("../models/Exercise")
 
 router.get("/programs", (req, res, next) => {
-    Program.find()
+    Program.find().limit(3)
         .then(dbResult => {
             res.render("programs", {
                 programs: dbResult
