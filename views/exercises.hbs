@@ -5,27 +5,27 @@
         <form id="filter-form">
             <ul>
                 <li class="tag-list-item">
-                    <input name="filterLevel" value="Beginner" type="checkbox" class="checkbox" />
+                    <input name="filterLevel" id="Beginner" value="Beginner" type="checkbox" class="checkbox" />
                     <label for="Beginner">BEGINNER</label>
                 </li>
                 <li class="tag-list-item">
-                    <input name="filterLevel" value="Intermediate" type="checkbox" class="checkbox" />
+                    <input name="filterLevel" id="Intermediate" value="Intermediate" type="checkbox" class="checkbox" />
                     <label for="Intermediate">INTERMEDIATE</label>
                 </li>
                 <li class="tag-list-item">
-                    <input name="filterLevel" value="Advanced" type="checkbox" class="checkbox" />
+                    <input name="filterLevel" id="Advanced" value="Advanced" type="checkbox" class="checkbox" />
                     <label for="Advanced">ADVANCED</label>
                 </li>
                 <li class="tag-list-item">
-                    <input name="filterBodyPart" value="Upper body" type="checkbox" class="checkbox" />
+                    <input name="filterBodyPart" id="Upper body" value="Upper body" type="checkbox" class="checkbox" />
                     <label for="Upper body">UPPER BODY</label>
                 </li>
                 <li class="tag-list-item">
-                    <input name="filterBodyPart" value="Lower body" type="checkbox" class="checkbox" />
+                    <input name="filterBodyPart" id="Lower body" value="Lower body" type="checkbox" class="checkbox" />
                     <label for="Lower body">LOWER BODY</label>
                 </li>
                 <li class="tag-list-item">
-                    <input name="filterBodyPart" value="Full body" type="checkbox" class="checkbox" />
+                    <input name="filterBodyPart" id="Full body" value="Full body" type="checkbox" class="checkbox" />
                     <label for="Full body">FULL BODY</label>
                 </li>
             </ul>
@@ -49,11 +49,11 @@
         {{#each exercises}}
         <li class="exercise">
             <div class="exercise-upper-info">
-            <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
-                <label for="favourite"></label></p>
-            
-            <p>{{this.level}}</p>
-            <p>{{this.bodyPart}}</p>
+                <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
+                    <label for="favourite"></label></p>
+
+                <p>{{this.level}}</p>
+                <p>{{this.bodyPart}}</p>
             </div>
             <iframe width="420" height="315" src={{this.exerciseUrl}}>
             </iframe>
