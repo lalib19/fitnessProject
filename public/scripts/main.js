@@ -84,14 +84,15 @@ function handleChange(e) {
 }
 
 function exerciseCard(exercise) {
-    let card = `<li class="exercise">
-  <p>${exercise.name} <input name="favourite" value=${exercise._id} type="checkbox" class="checkbox" />
-  <label for="favourite">favourite</label></p>
-  <p>${exercise.description}</p>
-  <p>${exercise.level}</p>
-  <p>${exercise.bodyPart}</p>
-  <iframe width="420" height="315" src=${exercise.exerciseUrl}>
-        </iframe>
+    let card = `<li class="exercise unique-exercise">
+    <div class="exercise-upper-info">
+        <p>${exercise.name} <input name="favourite" value=${exercise._id} type="checkbox" class="checkbox" />
+            <label for="favourite"></label></p>
+        <p>${exercise.level}</p>
+        <p>${exercise.bodyPart}</p>
+    </div>
+    <iframe width="100%" height="315" src=${exercise.exerciseUrl}>
+    </iframe>
 </li>`;
     console.log("exercise card function yo")
     return card + `</a>`;
