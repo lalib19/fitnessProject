@@ -256,7 +256,7 @@ iframe {
 	background-attachment: fixed;
 	background-size: cover;
 	width: 100vw;
-	/* height: 100vh; */
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 }
@@ -328,6 +328,7 @@ a {
 	background-attachment: fixed;
 	background-size: cover;
 	width: 100vw;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -403,3 +404,19 @@ a {
 	margin-left: 225px;
 	margin-right: 200px;
 }
+
+/* #you-didnt-know-div {
+	justify-self: center;
+} */
+
+/* #you-didnt-know-p {
+	border: 1px solid black;
+	background-color: black;
+	width: 120%;
+	font-size: 1.2rem;
+	color: white;
+	text-align: center;
+	margin-top: 1.3rem;
+	padding: 0.75rem 0.5rem;
+	text-align: center;
+} */
