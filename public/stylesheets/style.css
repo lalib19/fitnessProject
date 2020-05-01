@@ -5,6 +5,7 @@
 	padding: 0;
 	font-family: 'Montserrat';
 	box-sizing: border-box;
+	/* overflow: hidden; */
 }
 
 nav a {
@@ -218,18 +219,19 @@ h3 {
 .exoList-exercises {
 	display: flex;
 	flex-wrap: wrap;
-	align-content: center;
+	justify-content: center;
 	list-style: none;
-	margin-left: 250px;
+	margin-left: 1rem;
+	align-items: stretch;
 }
 
 .unique-exercise {
 	border: 1px solid black;
-	width: 35%;
+	width: 30%;
 	height: auto;
 	text-align: center;
-	margin-right: 75px;
-	margin-top: 20px;
+	margin-right: 4rem;
+	margin-top: 2.5rem;
 }
 
 .exercise-upper-info {
@@ -248,23 +250,28 @@ iframe {
 
 /* PROGRAMS.HBS CSS */
 
-.programs-container {
+.programs-container,
+.myPrograms-container {
 	background-image: url("/Images/exercise-img.jpg");
 	background-attachment: fixed;
 	background-size: cover;
 	width: 100vw;
-	height: auto;
+	/* height: 100vh; */
 	display: flex;
 	justify-content: center;
 }
 
-.exoList-programs {
+.exoList-programs,
+.programList-container {
 	display: grid;
 	grid-template-columns: auto auto;
 	list-style: none;
+	width: calc(100vw - 400px);
+	justify-items: center;
 }
 
-.exercise-in-programs-container {
+.exercise-in-programs-container,
+.myProgramList {
 	border: 1px solid black;
 	color: black;
 	width: 400px;
@@ -280,7 +287,8 @@ img {
 	padding-bottom: 1rem;
 }
 
-.exercise-info-in-programs-container {
+.exercise-info-in-programs-container,
+#myProgram-name {
 	border: 1px solid black;
 	background-color: black;
 	color: white;
@@ -303,45 +311,6 @@ a {
 	text-decoration: none;
 }
 
-/* MY PROGRAMS HBS */
-
-.myPrograms-container {
-	background-image: url("/Images/exercise-img.jpg");
-	background-attachment: fixed;
-	background-size: cover;
-	width: 100vw;
-	height: auto;
-	display: flex;
-	justify-content: center;
-}
-
-.programList-container {
-	display: grid;
-	grid-template-columns: auto auto;
-	list-style: none;
-}
-
-.myProgramList {
-	border: 1px solid black;
-	color: black;
-	width: 400px;
-	height: 400px;
-	text-align: center;
-	padding-bottom: 2rem;
-	margin: 1.5rem 2rem;
-}
-
-#myProgram-name {
-	border: 1px solid black;
-	background-color: black;
-	color: white;
-	width: auto;
-	height: 15%;
-	text-align: center;
-	padding: 1rem 0;
-	margin: 0.5rem;
-}
-
 #myProgram-go-to,
 #myProgram-update,
 #myProgeam-delete {
@@ -351,7 +320,10 @@ a {
 	padding: 0.75rem 0.5rem;
 }
 
-.myProgramsExercises-container {
+/* myPROGRAM EXERCISES.hbs CSS && * PROGRAM EXERCISES.hbs CSS */
+
+.myProgramsExercises-container,
+.homeFit-programs-container {
 	background-image: url("/Images/exercise-img.jpg");
 	background-attachment: fixed;
 	background-size: cover;
@@ -361,37 +333,73 @@ a {
 	justify-content: center;
 }
 
-.myUnique-exercise {
+#myUnique-exercise-div,
+#homeFit-programs-div {
+	display: flex;
+	justify-content: center;
+}
+
+#myUnique-exercise-p,
+#homeFit-programs-p {
+	border: 1px solid black;
+	background-color: black;
+	width: 40%;
+	font-size: 1.2rem;
+	color: white;
+	text-align: center;
+	margin-top: 1.3rem;
+	padding: 0.75rem 0.5rem;
+}
+
+.myUnique-exercise,
+.homeFIT-exercise {
 	border: 1px solid black;
 	width: 35%;
 	height: fit-content;
 	text-align: center;
-	margin-right: 75px;
-	margin-top: 20px;
+	margin: 20px 75px 20px 0;
 }
 
-.myUnique-exercise-upper-info {
+.myUnique-exercise-upper-info,
+.homeFIT-exercise-upper-info {
 	border: 1px solid black;
 	width: auto;
-	height: 15%;
+	/* height: 15%; */
 	text-align: center;
 	padding: 1rem 0;
 	margin: 0.5rem 2rem;
+	/* height: 100%; */
 }
 
-.myUnique-exercise-bottom-info {
+.myUnique-exercise-bottom-info,
+.homeFit-exercise-bottom-info {
 	border: 1px solid black;
 	width: auto;
 	height: auto;
-	text-align: center;
-	padding: 1rem 0 0 0;
+	text-align: justify;
+	line-height: 1.35rem;
+	padding: 1rem 0.5rem;
 	margin: 0.5rem 2rem;
 }
 
-#myUnique-exercise-h1 {
+.homeFit-filter-form {
+	position: fixed;
+	z-index: 1;
+	width: 250px;
+	padding-top: 5rem;
+	padding-left: 1rem;
+}
+
+.homeFit-unique-exercise {
 	border: 1px solid black;
-	background-color: black;
-	color: white;
-	padding: 0.75rem 0.5rem;
-	width: 35%;
+	width: 85%;
+	height: auto;
+	text-align: center;
+	margin-right: 4rem;
+	margin-top: 2.5rem;
+}
+
+.fixed {
+	margin-left: 225px;
+	margin-right: 200px;
 }

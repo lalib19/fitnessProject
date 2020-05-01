@@ -1,30 +1,35 @@
-<form class="tag-list-item" method="post" action="/prog-edit/{{program._id}}" id="form-create-program">
-    <h2 id="filter-form-title">MY HOME F<span id="navbar-span">i</span>T PROGRAM</h2>
-    <div>
-        {{!-- <label for="programName">Your program name</label> --}}
-        <input id="programName" type="text" name="programName" required placeholder="Give it a name" value={{program.name}}>
+<div class="exercises-container">
+    <div class="homeFit-filter-form">
+        <form class="tag-list-item" method="post" action="/prog-edit/{{program._id}}" id="form-create-program">
+        <h2 id="filter-form-title">MY HOME F<span id="navbar-span">i</span>T PROGRAM</h2>
+        <div>
+            {{!-- <label for="programName">Your program name</label> --}}
+            <input id="programName" type="text" name="programName" required placeholder="Give it a name" value={{program.name}}>
+        </div>
+        <div>
+            {{!-- <label for="programDescription">Description</label> --}}
+            <input id="programDescription" type="text" name="programDescription" placeholder="Description" value={{program.description}}>
+        </div>
+        {{!-- <input id="exercisesList" type="hidden" visibility="hidden" name="exercisesList"> --}}
+        <button id="create-program-btn">UPDATE PROGRAM</button>
+        </form>
     </div>
-    <div>
-        {{!-- <label for="programDescription">Description</label> --}}
-        <input id="programDescription" type="text" name="programDescription" placeholder="Description" value={{program.description}}>
+    <div class="fixed">
+        <ul class="exoList exoList-programs" id="exoList">
+            {{#each exercises}}
+            <li class="exercise homeFit-unique-exercise">
+                <div class="exercise-upper-info">
+                    <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
+                        <label for="favourite"></label></p>
+                    <p>{{this.level}}</p>
+                    <p>{{this.bodyPart}}</p>
+                </div>
+                <iframe width="100%" height="315" src={{this.exerciseUrl}}>
+                </iframe>
+                {{!-- <p id="exercise-description">{{this.description}}</p> --}}
+                {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
+            </li>
+            {{/each}}
+        </ul>
     </div>
-    {{!-- <input id="exercisesList" type="hidden" visibility="hidden" name="exercisesList"> --}}
-    <button id="create-program-btn">UPDATE PROGRAM</button>
-</form>
-<ul class="exoList" id="exoList">
-        {{#each exercises}}
-        <li class="exercise">
-            <div class="exercise-upper-info">
-                <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
-                    <label for="favourite"></label></p>
-
-                <p>{{this.level}}</p>
-                <p>{{this.bodyPart}}</p>
-            </div>
-            <iframe width="100%" height="315" src={{this.exerciseUrl}}>
-            </iframe>
-            {{!-- <p id="exercise-description">{{this.description}}</p> --}}
-            {{!-- <a class="link" href="/exercises/page/{{this._id}}">... see more</a> --}}
-        </li>
-        {{/each}}
-    </ul>
+</div>

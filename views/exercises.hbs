@@ -44,14 +44,12 @@
             <button id="create-program-btn">CREATE PROGRAM</button>
         </form>
     </div>
-
     <ul class="exoList exoList-exercises" id="exoList">
         {{#each exercises}}
         <li class="exercise unique-exercise">
             <div class="exercise-upper-info">
                 <p>{{this.name}} <input name="favourite" value="{{this._id}}" type="checkbox" class="checkbox" />
                     <label for="favourite"></label></p>
-
                 <p>{{this.level}}</p>
                 <p>{{this.bodyPart}}</p>
             </div>
